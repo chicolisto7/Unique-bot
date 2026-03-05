@@ -1,18 +1,15 @@
-<div align="center">
+ <div align="center">
 
-<!-- Neon Hero Banner -->
+<!-- Neon Futuristic Banner -->
 <img src="https://capsule-render.vercel.app/api?type=waving&height=300&section=header&text=UNIQUETECHPRO+𓃬&fontColor=00ffff&color=0:000000,50:0f0f0f,100:001f33&animation=glitch" width="100%"/>
+
+<!-- 3D Planet GIF -->
+<img src="https://media.giphy.com/media/3oKIPwoeGErMmaI43C/giphy.gif" width="70%" style="border-radius:15px"/>
 
 <!-- Typing Animation -->
 <h1>
 <img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&size=40&duration=4000&color=00ffff&center=true&vCenter=true&width=750&lines=UNIQUETECHPRO+𓃬;Futuristic+Bots+%26+Web+Apps;Cyberpunk+AI+Projects;Built+With+Innovation+And+Passion"/>
 </h1>
-
-<!-- Live 3D Planets Section (GIFs) -->
-<p align="center">
-<img src="https://media.giphy.com/media/3o7TKtnuHOHHUjR38Y/giphy.gif" width="70%" style="border-radius:15px"/>
-<img src="https://media.giphy.com/media/26tOZ42Mg6pbTUPHW/giphy.gif" width="70%" style="border-radius:15px"/>
-</p>
 
 <!-- Visitor Counter -->
 <img src="https://komarev.com/ghpvc/?username=chicolisto7&label=Profile+Views&color=00ffff&style=for-the-badge"/>
@@ -23,7 +20,7 @@
 
 # 🌌 About Me
 
-I am a **Cyberpunk AI & Futuristic Developer**, building:
+I am a **Cyberpunk AI & Futuristic Developer**, creating:
 
 - 🤖 Smart Automation Bots  
 - 🌐 Futuristic Web Apps  
@@ -57,6 +54,14 @@ Creating tech that feels **like living in the future**.
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake.svg"/>
+</p>
+
+---
+
+# 🪐 Futuristic 3D Planets Section
+
+<p align="center">
+<img src="https://media.giphy.com/media/3o7TKtnuHOHHUjR38Y/giphy.gif" width="70%" style="border-radius:15px"/>
 </p>
 
 ---
@@ -110,6 +115,6 @@ Creating tech that feels **like living in the future**.
 ---
 
 <div align="center">
-### ⭐ Star the project if you like this ultra futuristic AI setup!
+### ⭐ Star the project if you like this futuristic AI setup!
 <img src="https://capsule-render.vercel.app/api?type=waving&height=120&section=footer&color=0:000000,100:001f33"/>
 </div>
