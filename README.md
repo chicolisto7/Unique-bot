@@ -1,5 +1,3 @@
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Black+Ops+One&size=70&pause=500&color=00FF00&center=true&width=1150&height=200&lines=WELCOME-UNIQUE-BOT-𓃬" alt="Typing SVG" /></a>
-  </div>
 <a><img src='https://files.catbox.moe/d4krv0.png'/></a>
 
 <!-- 📊 STATS & HERO ANIMATION (Updated Colors) -->
@@ -18,10 +16,10 @@
 
 UNIQUE BOT is a powerful modern tech project focused on building:
 
-- ⚡ Automation Systems
-- 🤖 Smart Bots
-- 🌐 Web Applications
-- 🔐 Secure Tech Tools
+●⚡ Automation Systems
+●🤖 Smart Bots
+●🌐 Web Applications
+●🔐 Secure Tech Tools
 
 Designed to deliver speed, security and powerful features.
 
@@ -31,7 +29,7 @@ Designed to deliver speed, security and powerful features.
 
 Click the button below to fork the repository to your GitHub account.
 
-<p align="center"><a href="https://github.com/chicolisto7/Unique-bot/forks"><img src="https://img.shields.io/badge/FORK%20REPOSITORY-100000?style=for-the-badge&logo=github&logoColor=white&color=blue"/></a></p>---
+<p align="center"><a href="https://github.com/chicolisto7/Unique-bot/forks"><img src="https://img.shields.io/badge/FORK%20REPOSITORY-100000?style=for-the-badge&logo=github&logoColor=white&color=blue"/></a></p>
 
 🔑 Get Pair Session ID
 
@@ -41,22 +39,22 @@ Server 1
 <img src="https://img.shields.io/badge/Get%20Session%20ID-purple?style=for-the-badge&logo=server&logoColor=white"/></a></p>Server 2
 
 <p align="center"><a href="#">
-<img src="https://img.shields.io/badge/Pair%20Code-blue?style=for-the-badge&logo=link&logoColor=white"/></a></p>---
+<img src="https://img.shields.io/badge/Pair%20Code-blue?style=for-the-badge&logo=link&logoColor=white"/></a></p>
 
 📥 Download Bot Files
 
 <p align="center"><a href="#">
-<img src="https://img.shields.io/badge/Download%20ZIP-ff2e63?style=for-the-badge&logo=download&logoColor=white"/></a></p>---
+<img src="https://img.shields.io/badge/Download%20ZIP-ff2e63?style=for-the-badge&logo=download&logoColor=white"/></a></p>
 
 🚀 Deploy Now
 
 Heroku Deployment
 
-<p align="center"><a href="https://heroku.com"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white"/></a></p>---
+<p align="center"><a href="https://heroku.com"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white"/></a></p>
 
 🌐 Supported Hosting Platforms
 
-UNIQUETECHPRO supports deployment on multiple platforms:
+UNIQUE BOT 𓃬 supports deployment on multiple platforms:
 
 ▫️[Heroku](https://heroku.com)
 ▫️[Katabump](https://dashboard.katabump.com/auth/login#203630)
@@ -73,7 +71,7 @@ UNIQUETECHPRO supports deployment on multiple platforms:
 <img src="https://img.shields.io/badge/Contact%20Owner-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/>
 </a><a href="https://whatsapp.com/channel/0029Vb6ojLuAzNc32AUrdq0O">
 <img src="https://img.shields.io/badge/Join%20WhatsApp%20Channel-00acee?style=for-the-badge&logo=whatsapp&logoColor=white"/>
-</a></p>---
+</a></p>
 
 <div align="center">⭐ Don't forget to star the repository if you like this project!
 
