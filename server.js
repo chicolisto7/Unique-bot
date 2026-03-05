@@ -1,40 +1,34 @@
 const express = require("express");
-const { default: makeWASocket, useMultiFileAuthState } = require("@whiskeysockets/baileys");
 const path = require("path");
+const cors = require("cors");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
-// Serve frontend files
-app.use(express.static(path.join(__dirname, "public")));
+app.use(cors());
 app.use(express.json());
 
-async function startBot() {
-  const { state, saveCreds } = await useMultiFileAuthState("./session");
+const PORT = process.env.PORT || 3000;
 
-  const sock = makeWASocket({
-    auth: state,
-    printQRInTerminal: false
-  });
+// Serve static files
+app.use(express.static(path.join(__dirname, "public")));
 
-  // Endpoint ya frontend ku-request pair code
-  app.post("/pair", async (req, res) => {
-    const number = req.body.number;
-    if (!number) return res.status(400).json({ error: "Number required" });
+// Homepage route
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "index.html"));
+});
 
-    try {
-      const code = await sock.requestPairingCode(number);
-      res.json({ pairCode: code });
-    } catch (err) {
-      console.log(err);
-      res.status(500).json({ error: "Failed to generate pair code" });
-    }
-  });
+// Pair code API mfano
+app.get("/pair", (req, res) => {
 
-  // Save session
-  sock.ev.on("creds.update", saveCreds);
-}
+    const code = Math.floor(100000 + Math.random() * 900000);
 
-startBot();
+    res.json({
+        status: true,
+        pair_code: code
+    });
 
-app.listen(PORT, () => console.log(`UNIQUE BOT 𓃬 server running on port ${PORT}`));
+});
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
