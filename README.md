@@ -1,16 +1,22 @@
-<div align="center"><img src="https://capsule-render.vercel.app/api?type=waving&height=200&text=UNIQUETECHPRO&fontAlign=50&fontAlignY=40&color=0:0f2027,50:203a43,100:2c5364&fontColor=ffffff&animation=fadeIn" width="100%"/><h1>
-<img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&size=35&duration=3000&color=00F7FF&center=true&vCenter=true&width=600&lines=Welcome+to+UNIQUETECHPRO+🚀;Next+Generation+Tech+Solutions;Powerful+Bots+%7C+Apps+%7C+Automation;Built+With+Passion+💙" />
-</h1><p>
-<img src="https://img.shields.io/github/forks/chicolisto7/chicolisto?style=for-the-badge&color=00c3ff"/>
-<img src="https://img.shields.io/github/stars/chicolisto7/chicolisto?style=for-the-badge&color=FFD700"/>
-<img src="https://img.shields.io/github/watchers/chicolisto7/chicolisto?style=for-the-badge&color=blue"/>
-<img src="https://img.shields.io/github/repo-size/chicolisto7/chicolisto?style=for-the-badge&color=green"/>
-<img src="https://img.shields.io/github/last-commit/chicolisto7/chicolisto?style=for-the-badge&color=red"/>
-</p><img src="https://media.giphy.com/media/QTfX9Ejfra3ZmNxh6B/giphy.gif" width="85%" style="border-radius:15px"/></div>---
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Black+Ops+One&size=70&pause=500&color=00FF00&center=true&width=1150&height=200&lines=WELCOME-UNIQUE-BOT-𓃬" alt="Typing SVG" /></a>
+  </div>
+<a><img src='https://files.catbox.moe/d4krv0.png'/></a>
 
-🌟 About UNIQUETECHPRO
+<!-- 📊 STATS & HERO ANIMATION (Updated Colors) -->
+<div align="center">
 
-UNIQUETECHPRO is a powerful modern tech project focused on building:
+  <!-- GitHub Stats Badges with new color palette -->
+  <p>
+    <img src="https://img.shields.io/https://github.com/chicolisto7/Unique-bot/forks?style=flat&color=1E88E5&logo=github&logoColor=white&label=Forks" alt="GitHub Forks" />
+    <img src="https://img.shields.io/github/followers/chicolisto7/Unique-bot?style=flat&color=43A047&logo=github&logoColor=white&label=Followers" alt="GitHub Followers" />
+    <img src="https://img.shields.io/github/last-commit/chicolisto7/Unique-bot?style=flat&color=8E24AA&logo=git&logoColor=white&label=Last%20Commit" alt="Last Commit" />
+    <img src="https://img.shields.io/github/repo-size/chicolisto7/Unique-bot?style=flat&color=0097A7&logo=database&logoColor=white&label=Repo%20Size" alt="Repo Size" />
+    <img src="https://img.shields.io/github/package-json/v/chicolisto7/Unique-bot?style=flat&color=F57C00&logo=npm&logoColor=white&label=Version" alt="Package Version" />
+  </p>
+
+🌟 ABOUT UNIQUE BOT
+
+UNIQUE BOT is a powerful modern tech project focused on building:
 
 - ⚡ Automation Systems
 - 🤖 Smart Bots
@@ -19,15 +25,13 @@ UNIQUETECHPRO is a powerful modern tech project focused on building:
 
 Designed to deliver speed, security and powerful features.
 
----
-
 🚀 Installation Guide
 
 1️⃣ Fork The Repository
 
 Click the button below to fork the repository to your GitHub account.
 
-<p align="center"><a href="https://github.com/chicolisto7/chicolisto/fork"><img src="https://img.shields.io/badge/FORK%20REPOSITORY-100000?style=for-the-badge&logo=github&logoColor=white&color=blue"/></a></p>---
+<p align="center"><a href="https://github.com/chicolisto7/Unique-bot/forks"><img src="https://img.shields.io/badge/FORK%20REPOSITORY-100000?style=for-the-badge&logo=github&logoColor=white&color=blue"/></a></p>---
 
 🔑 Get Pair Session ID
 
@@ -54,21 +58,20 @@ Heroku Deployment
 
 UNIQUETECHPRO supports deployment on multiple platforms:
 
-- Heroku
-- Katabump
-- Bot Hosting
-- Solar Hosting
-- Optiklink
-- Daki.cc
-- Render
-
----
+▫️[Heroku](https://heroku.com)
+▫️[Katabump](https://dashboard.katabump.com/auth/login#203630)
+▫️[Bothosting](https://bot-hosting.net/?aff=1097457675723341836)
+▫️[Solarhosting.net](https://solarhosting.net)
+▫️[Optiklink](https://optiklink.com)
+▫️[Daki.cc](https://daki.cc)
+▫️[Render](https://render.com)
+▫️[Koyeb](https://www.koyeb.com/)
 
 📢 Follow For Updates
 
-<p align="center"><a href="#">
+<p align="center"><a href="https://bit.ly/UniqueTechpro">
 <img src="https://img.shields.io/badge/Contact%20Owner-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/>
-</a><a href="#">
+</a><a href="https://whatsapp.com/channel/0029Vb6ojLuAzNc32AUrdq0O">
 <img src="https://img.shields.io/badge/Join%20WhatsApp%20Channel-00acee?style=for-the-badge&logo=whatsapp&logoColor=white"/>
 </a></p>---
 
