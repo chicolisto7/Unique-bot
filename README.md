@@ -16,12 +16,8 @@
 
 UNIQUE BOT is a powerful modern tech project focused on building:
 
-⚡ Automation Systems
-
-🤖 Smart Bots
-
+⚡ Automation Systems🤖 Smart Bots
 🌐 Web Applications
-
 🔐 Secure Tech Tools
 
 Designed to deliver speed, security and powerful features.
