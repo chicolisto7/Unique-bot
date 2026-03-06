@@ -1,7 +1,7 @@
 {
-  "name": "unique-bot-pair",
+  "name": "unique-bot",
   "version": "1.0.0",
-  "description": "UNIQUE BOT WhatsApp Pair Code Server",
+  "description": "UNIQUE BOT Beautiful Pair Code UI",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
