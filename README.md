@@ -34,15 +34,15 @@ Click the button below to fork the repository to your GitHub account.
 
 Server 1
 
-<p align="center"><a href="#">
+<p align="center"><a href="https://unique-bot-2jpp.onrender.com">
 <img src="https://img.shields.io/badge/Get%20Session%20ID-purple?style=for-the-badge&logo=server&logoColor=white"/></a></p>Server 2
 
-<p align="center"><a href="#">
+<p align="center"><a href="https://unique-bot-2jpp.onrender.com">
 <img src="https://img.shields.io/badge/Pair%20Code-blue?style=for-the-badge&logo=link&logoColor=white"/></a></p>
 
 📥 Download Bot Files
 
-<p align="center"><a href="#">
+<p align="center"><a href="https://github.com/chicolisto7/Unique-bot/archive/refs/heads/main.zip">
 <img src="https://img.shields.io/badge/Download%20ZIP-ff2e63?style=for-the-badge&logo=download&logoColor=white"/></a></p>
 
 🚀 Deploy Now
