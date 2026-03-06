@@ -63,6 +63,7 @@ UNIQUE BOT 𓃬 supports deployment on multiple platforms:
 ▫️[Daki.cc](https://daki.cc)
 ▫️[Render](https://render.com)
 ▫️[Koyeb](https://www.koyeb.com/)
+▫️[Railway](https://railway.com/)
 
 📢 Follow For Updates
 
