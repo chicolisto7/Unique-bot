@@ -8,7 +8,6 @@ DisconnectReason
 } = require("@whiskeysockets/baileys")
 
 const app = express()
-
 app.use(express.json())
 
 let sock
@@ -26,20 +25,21 @@ sock.ev.on("creds.update", saveCreds)
 
 sock.ev.on("connection.update",(update)=>{
 
-const { connection,lastDisconnect } = update
+const { connection, lastDisconnect } = update
 
 if(connection === "close"){
 
 const shouldReconnect = lastDisconnect?.error?.output?.statusCode !== DisconnectReason.loggedOut
 
 if(shouldReconnect){
+console.log("Reconnecting...")
 startSock()
 }
 
 }
 
 if(connection === "open"){
-console.log("WhatsApp connected")
+console.log("WhatsApp connected successfully")
 }
 
 })
@@ -51,12 +51,13 @@ startSock()
 app.get("/",(req,res)=>{
 
 res.send(`
+
 <!DOCTYPE html>
 <html>
 
 <head>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>UNIQUE BOT</title>
 
@@ -64,7 +65,7 @@ res.send(`
 
 body{
 margin:0;
-font-family:sans-serif;
+font-family:Arial;
 background:#0f172a;
 display:flex;
 justify-content:center;
@@ -74,7 +75,7 @@ color:white;
 }
 
 .box{
-width:90%;
+width:95%;
 max-width:420px;
 background:#1e293b;
 padding:30px;
@@ -83,12 +84,12 @@ text-align:center;
 }
 
 .title{
-font-size:28px;
+font-size:30px;
 font-weight:bold;
 background:linear-gradient(90deg,red,orange,yellow,green,cyan,blue,violet);
 -webkit-background-clip:text;
 color:transparent;
-animation:rainbow 6s linear infinite;
+animation:rainbow 5s linear infinite;
 }
 
 @keyframes rainbow{
@@ -97,20 +98,22 @@ animation:rainbow 6s linear infinite;
 
 input{
 width:100%;
-padding:12px;
+padding:14px;
 margin-top:20px;
 border:none;
 border-radius:8px;
+font-size:16px;
 }
 
 button{
 width:100%;
-padding:12px;
+padding:14px;
 margin-top:15px;
 border:none;
 border-radius:8px;
 background:#22c55e;
 font-size:16px;
+cursor:pointer;
 }
 
 .code{
@@ -118,7 +121,13 @@ margin-top:20px;
 background:black;
 padding:15px;
 border-radius:10px;
-font-size:22px;
+font-size:24px;
+letter-spacing:3px;
+}
+
+.copy{
+margin-top:10px;
+background:#2563eb;
 }
 
 </style>
@@ -139,6 +148,8 @@ font-size:22px;
 
 <div id="code" class="code">----</div>
 
+<button class="copy" onclick="copyCode()">Copy Code</button>
+
 </div>
 
 <script>
@@ -157,30 +168,34 @@ method:"POST",
 headers:{
 "Content-Type":"application/json"
 },
-body:JSON.stringify({
-number:number
-})
+body:JSON.stringify({number})
 })
 
 let data = await res.json()
 
 if(data.code){
-
 document.getElementById("code").innerText = data.code
-
 }else{
-
 alert(data.error)
+}
 
 }
+
+function copyCode(){
+
+let code = document.getElementById("code").innerText
+
+navigator.clipboard.writeText(code)
+
+alert("Code copied")
 
 }
 
 </script>
 
 </body>
-
 </html>
+
 `)
 
 })
@@ -189,7 +204,7 @@ app.post("/pair", async (req,res)=>{
 
 try{
 
-const number = req.body.number
+let number = req.body.number
 
 if(!number){
 
@@ -199,13 +214,25 @@ error:"Number required"
 
 }
 
+number = number.replace(/[^0-9]/g,"")
+
+if(!sock){
+
+return res.json({
+error:"Server not ready"
+})
+
+}
+
 const code = await sock.requestPairingCode(number)
 
 res.json({
-code:code
+code
 })
 
 }catch(e){
+
+console.log(e)
 
 res.json({
 error:"Failed to generate code"
@@ -219,6 +246,6 @@ const PORT = process.env.PORT || 3000
 
 app.listen(PORT,()=>{
 
-console.log("Server running")
+console.log("Server running on port",PORT)
 
 })
