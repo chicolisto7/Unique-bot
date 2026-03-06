@@ -5,7 +5,7 @@
 
   <!-- GitHub Stats Badges with new color palette -->
   <p>
-    <img src="https://img.shields.io/https://github.com/chicolisto7/Unique-bot/forks?style=flat&color=1E88E5&logo=github&logoColor=white&label=Forks" alt="GitHub Forks" />
+    <img src="https://img.shields.io/github/forks/chicolisto7/Unique-bot?style=flat&color=1E88E5&logo=github&logoColor=white&label=Forks" alt="GitHub Forks" />
     <img src="https://img.shields.io/github/followers/chicolisto7/Unique-bot?style=flat&color=43A047&logo=github&logoColor=white&label=Followers" alt="GitHub Followers" />
     <img src="https://img.shields.io/github/last-commit/chicolisto7/Unique-bot?style=flat&color=8E24AA&logo=git&logoColor=white&label=Last%20Commit" alt="Last Commit" />
     <img src="https://img.shields.io/github/repo-size/chicolisto7/Unique-bot?style=flat&color=0097A7&logo=database&logoColor=white&label=Repo%20Size" alt="Repo Size" />
