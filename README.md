@@ -6,7 +6,7 @@
   <!-- GitHub Stats Badges with new color palette -->
   <p>
     <img src="https://img.shields.io/github/forks/chicolisto7/Unique-bot?style=flat&color=1E88E5&logo=github&logoColor=white&label=Forks" alt="GitHub Forks" />
-    <img src="https://img.shields.io/github/followers/chicolisto7/Unique-bot?style=flat&color=43A047&logo=github&logoColor=white&label=Followers" alt="GitHub Followers" />
+    <img src="https://img.shields.io/github/followers/chicolisto7?style=flat&color=43A047&logo=github&logoColor=white&label=Followers" alt="GitHub Followers" />
     <img src="https://img.shields.io/github/last-commit/chicolisto7/Unique-bot?style=flat&color=8E24AA&logo=git&logoColor=white&label=Last%20Commit" alt="Last Commit" />
     <img src="https://img.shields.io/github/repo-size/chicolisto7/Unique-bot?style=flat&color=0097A7&logo=database&logoColor=white&label=Repo%20Size" alt="Repo Size" />
     <img src="https://img.shields.io/github/package-json/v/chicolisto7/Unique-bot?style=flat&color=F57C00&logo=npm&logoColor=white&label=Version" alt="Package Version" />
@@ -29,6 +29,15 @@ Designed to deliver speed, security and powerful features.
 Click the button below to fork the repository to your GitHub account.
 
 <p align="center"><a href="https://github.com/chicolisto7/Unique-bot/forks"><img src="https://img.shields.io/badge/FORK%20REPOSITORY-100000?style=for-the-badge&logo=github&logoColor=white&color=blue"/></a></p>
+
+## 📥 Clone Repository
+
+```bash
+git clone https://github.com/chicolisto7/Unique-bot.git
+cd Unique-bot
+npm install
+npm start
+```
 
 🔑 Get Pair Session ID
 
