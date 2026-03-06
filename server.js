@@ -3,15 +3,17 @@ const pino = require("pino")
 
 const {
 default: makeWASocket,
-useMultiFileAuthState
+useMultiFileAuthState,
+DisconnectReason
 } = require("@whiskeysockets/baileys")
 
 const app = express()
+
 app.use(express.json())
 
 let sock
 
-async function start(){
+async function startSock(){
 
 const { state, saveCreds } = await useMultiFileAuthState("./session")
 
@@ -22,14 +24,33 @@ auth: state
 
 sock.ev.on("creds.update", saveCreds)
 
+sock.ev.on("connection.update",(update)=>{
+
+const { connection,lastDisconnect } = update
+
+if(connection === "close"){
+
+const shouldReconnect = lastDisconnect?.error?.output?.statusCode !== DisconnectReason.loggedOut
+
+if(shouldReconnect){
+startSock()
 }
 
-start()
+}
+
+if(connection === "open"){
+console.log("WhatsApp connected")
+}
+
+})
+
+}
+
+startSock()
 
 app.get("/",(req,res)=>{
 
 res.send(`
-
 <!DOCTYPE html>
 <html>
 
@@ -53,26 +74,21 @@ color:white;
 }
 
 .box{
-
 width:90%;
 max-width:420px;
 background:#1e293b;
 padding:30px;
 border-radius:15px;
 text-align:center;
-box-shadow:0 0 25px black;
-
 }
 
 .title{
-
 font-size:28px;
 font-weight:bold;
 background:linear-gradient(90deg,red,orange,yellow,green,cyan,blue,violet);
 -webkit-background-clip:text;
 color:transparent;
 animation:rainbow 6s linear infinite;
-
 }
 
 @keyframes rainbow{
@@ -80,18 +96,14 @@ animation:rainbow 6s linear infinite;
 }
 
 input{
-
 width:100%;
 padding:12px;
 margin-top:20px;
 border:none;
 border-radius:8px;
-font-size:16px;
-
 }
 
 button{
-
 width:100%;
 padding:12px;
 margin-top:15px;
@@ -99,18 +111,14 @@ border:none;
 border-radius:8px;
 background:#22c55e;
 font-size:16px;
-cursor:pointer;
-
 }
 
 .code{
-
 margin-top:20px;
 background:black;
 padding:15px;
 border-radius:10px;
 font-size:22px;
-
 }
 
 </style>
@@ -123,11 +131,11 @@ font-size:22px;
 
 <div class="title">UNIQUE BOT 𓃬</div>
 
-<p>WhatsApp Pair Code Generator</p>
+<p>Enter WhatsApp Number</p>
 
 <input id="num" placeholder="255712345678">
 
-<button onclick="pair()">Generate Code</button>
+<button onclick="pair()">Generate Pair Code</button>
 
 <div id="code" class="code">----</div>
 
@@ -138,6 +146,11 @@ font-size:22px;
 async function pair(){
 
 let number = document.getElementById("num").value
+
+if(!number){
+alert("Enter phone number")
+return
+}
 
 let res = await fetch("/pair",{
 method:"POST",
@@ -157,7 +170,7 @@ document.getElementById("code").innerText = data.code
 
 }else{
 
-alert("Error generating code")
+alert(data.error)
 
 }
 
@@ -168,7 +181,6 @@ alert("Error generating code")
 </body>
 
 </html>
-
 `)
 
 })
@@ -177,18 +189,26 @@ app.post("/pair", async (req,res)=>{
 
 try{
 
-let number = req.body.number
+const number = req.body.number
 
-let code = await sock.requestPairingCode(number)
+if(!number){
+
+return res.json({
+error:"Number required"
+})
+
+}
+
+const code = await sock.requestPairingCode(number)
 
 res.json({
 code:code
 })
 
-}catch(err){
+}catch(e){
 
 res.json({
-error:"Failed"
+error:"Failed to generate code"
 })
 
 }
@@ -199,6 +219,6 @@ const PORT = process.env.PORT || 3000
 
 app.listen(PORT,()=>{
 
-console.log("UNIQUE BOT running")
+console.log("Server running")
 
 })
