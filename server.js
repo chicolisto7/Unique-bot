@@ -1,130 +1,84 @@
 const express = require("express")
+const pino = require("pino")
+
+const {
+default: makeWASocket,
+useMultiFileAuthState,
+DisconnectReason
+} = require("@whiskeysockets/baileys")
+
 const app = express()
-
-const PORT = process.env.PORT || 3000
-
 app.use(express.json())
+app.use(express.static("public"))
 
-function generateCode(){
-const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ123456789"
-let code = ""
-for(let i=0;i<8;i++){
-code += chars[Math.floor(Math.random()*chars.length)]
-}
-return code
-}
+let sock
 
-app.get("/", (req,res)=>{
+async function startSock(){
 
-res.send(`
-<!DOCTYPE html>
-<html>
-<head>
+const { state, saveCreds } = await useMultiFileAuthState("session")
 
-<title>UNIQUE BOT 𓃬</title>
-
-<style>
-
-body{
-margin:0;
-font-family:Arial;
-background:linear-gradient(135deg,#141e30,#243b55);
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-color:white;
-}
-
-.box{
-background:rgba(255,255,255,0.1);
-padding:40px;
-border-radius:15px;
-text-align:center;
-width:300px;
-backdrop-filter:blur(10px);
-}
-
-input{
-width:90%;
-padding:10px;
-border:none;
-border-radius:6px;
-margin-bottom:15px;
-}
-
-button{
-padding:10px 20px;
-border:none;
-background:#00ffcc;
-border-radius:6px;
-cursor:pointer;
-font-weight:bold;
-}
-
-#result{
-margin-top:20px;
-font-size:20px;
-color:#00ffcc;
-}
-
-</style>
-
-</head>
-
-<body>
-
-<div class="box">
-
-<h2>UNIQUE BOT 𓃬</h2>
-
-<p>WhatsApp Pair Code</p>
-
-<input id="number" placeholder="Enter Number">
-
-<button onclick="pair()">Generate Code</button>
-
-<div id="result"></div>
-
-</div>
-
-<script>
-
-async function pair(){
-
-let number = document.getElementById("number").value
-
-let res = await fetch("/pair",{
-method:"POST",
-headers:{
-"Content-Type":"application/json"
-},
-body:JSON.stringify({number:number})
+sock = makeWASocket({
+logger: pino({ level: "silent" }),
+auth: state
 })
 
-let data = await res.json()
+sock.ev.on("creds.update", saveCreds)
 
-document.getElementById("result").innerHTML = "PAIR CODE : " + data.code
+sock.ev.on("connection.update",(update)=>{
+
+const { connection,lastDisconnect } = update
+
+if(connection === "close"){
+
+if(lastDisconnect?.error?.output?.statusCode !== DisconnectReason.loggedOut){
+startSock()
+}
 
 }
 
-</script>
-
-</body>
-</html>
-`)
 })
 
-app.post("/pair",(req,res)=>{
+}
 
-const code = generateCode()
+startSock()
+
+app.post("/pair", async (req,res)=>{
+
+try{
+
+const number = req.body.number
+
+if(!number){
+
+return res.json({
+status:false,
+message:"Enter phone number"
+})
+
+}
+
+const code = await sock.requestPairingCode(number)
 
 res.json({
+status:true,
 code:code
 })
 
+}catch(err){
+
+res.json({
+status:false,
+error:err.message
 })
 
+}
+
+})
+
+const PORT = process.env.PORT || 3000
+
 app.listen(PORT,()=>{
-console.log("Server running")
+
+console.log("UNIQUE BOT server running")
+
 })
