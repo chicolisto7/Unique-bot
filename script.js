@@ -1,26 +1,11 @@
-async function generateCode() {
-  const number = document.getElementById("number").value;
-  if(!number){
-    alert("Enter a number");
-    return;
-  }
+async function generate(){
 
-  document.getElementById("pairCode").innerText = "Generating...";
+let number = document.getElementById("number").value
 
-  try{
-    const res = await fetch("/pair",{
-      method:"POST",
-      headers: {"Content-Type":"application/json"},
-      body: JSON.stringify({number})
-    });
+let res = await fetch("/pair")
 
-    const data = await res.json();
-    if(data.pairCode){
-      document.getElementById("pairCode").innerText = data.pairCode;
-    } else {
-      document.getElementById("pairCode").innerText = "Error generating code";
-    }
-  } catch(err){
-    document.getElementById("pairCode").innerText = "Server error";
-  }
-      }
+let data = await res.json()
+
+document.getElementById("result").innerHTML = "PAIR CODE: " + data.pair_code
+
+}
