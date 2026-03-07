@@ -54,42 +54,44 @@ res.send(`
 
 <!DOCTYPE html>
 <html>
-
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>UNIQUE BOT</title>
+<title>UNIQUE BOT PAIR</title>
 
 <style>
 
 body{
 margin:0;
-font-family:Arial;
-background:#0f172a;
+height:100vh;
+font-family:sans-serif;
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
 display:flex;
 justify-content:center;
 align-items:center;
-height:100vh;
 color:white;
+overflow:hidden;
 }
 
-.box{
-width:95%;
-max-width:420px;
-background:#1e293b;
-padding:30px;
-border-radius:15px;
+.card{
+backdrop-filter:blur(20px);
+background:rgba(255,255,255,0.1);
+padding:40px;
+border-radius:20px;
 text-align:center;
+width:90%;
+max-width:420px;
+box-shadow:0 0 40px rgba(0,255,255,0.3);
 }
 
 .title{
-font-size:30px;
+font-size:32px;
 font-weight:bold;
 background:linear-gradient(90deg,red,orange,yellow,green,cyan,blue,violet);
 -webkit-background-clip:text;
 color:transparent;
-animation:rainbow 5s linear infinite;
+animation:rainbow 5s infinite linear;
 }
 
 @keyframes rainbow{
@@ -98,36 +100,32 @@ animation:rainbow 5s linear infinite;
 
 input{
 width:100%;
-padding:14px;
+padding:15px;
 margin-top:20px;
 border:none;
-border-radius:8px;
+border-radius:10px;
 font-size:16px;
 }
 
 button{
 width:100%;
-padding:14px;
+padding:15px;
 margin-top:15px;
 border:none;
-border-radius:8px;
-background:#22c55e;
+border-radius:10px;
 font-size:16px;
+background:linear-gradient(90deg,#00c6ff,#0072ff);
+color:white;
 cursor:pointer;
 }
 
 .code{
 margin-top:20px;
+font-size:28px;
+letter-spacing:4px;
 background:black;
 padding:15px;
 border-radius:10px;
-font-size:24px;
-letter-spacing:3px;
-}
-
-.copy{
-margin-top:10px;
-background:#2563eb;
 }
 
 </style>
@@ -136,11 +134,11 @@ background:#2563eb;
 
 <body>
 
-<div class="box">
+<div class="card">
 
 <div class="title">UNIQUE BOT 𓃬</div>
 
-<p>Enter WhatsApp Number</p>
+<p>Enter WhatsApp number</p>
 
 <input id="num" placeholder="255712345678">
 
@@ -148,11 +146,42 @@ background:#2563eb;
 
 <div id="code" class="code">----</div>
 
-<button class="copy" onclick="copyCode()">Copy Code</button>
-
 </div>
 
+<audio autoplay loop>
+<source src="https://files.catbox.moe/9h9j2c.mp3" type="audio/mpeg">
+</audio>
+
 <script>
+
+async function pair(){
+
+let number = document.getElementById("num").value
+
+let res = await fetch("/pair",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({number})
+})
+
+let data = await res.json()
+
+if(data.code){
+
+document.getElementById("code").innerText=data.code
+
+}else{
+
+alert(data.error)
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
 
 async function pair(){
 
@@ -188,13 +217,6 @@ let code = document.getElementById("code").innerText
 navigator.clipboard.writeText(code)
 
 alert("Code copied")
-
-}
-
-</script>
-
-</body>
-</html>
 
 `)
 
