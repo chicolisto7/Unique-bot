@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "docker:build": "docker build -t minato-md .",
+    "docker:build": "docker build -t Unique-bot .",
     "docker:run": "docker run -e SESSION_ID=$SESSION_ID Unique-bot"
   },
   "keywords": [
