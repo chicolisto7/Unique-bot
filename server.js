@@ -40,8 +40,10 @@ ready = false
 const shouldReconnect =
 lastDisconnect?.error?.output?.statusCode !== DisconnectReason.loggedOut
 
-if(shouldReconnect){
-startSock()
+if (shouldReconnect) {
+    setTimeout(() => {
+        startSock().catch(console.error)
+    }, 5000)
 }
 
 }
@@ -50,7 +52,9 @@ startSock()
 
 }
 
-startSock()
+startSock().catch(err => {
+    console.error("Startup Error:", err)
+})
 
 app.get("/",(req,res)=>{
 
@@ -190,7 +194,11 @@ error:"Server still connecting..."
 
 let number=req.body.number
 
-if(!number){
+if (!number || typeof number !== "string") {
+    return res.json({
+        error: "Enter valid phone number"
+    })
+}
 
 return res.json({
 error:"Enter phone number"
@@ -206,7 +214,7 @@ res.json({code})
 
 }catch(err){
 
-console.log(err)
+console.error("Server Error:", err)
 
 res.json({
 error:"Failed to generate code"
