@@ -1,4 +1,4 @@
-<a><img src='https://files.catbox.moe/d4krv0.png'/></a>
+<a><img src='https://i.ibb.co/vCbTnqFw/file-0000000072f07243bcaac1689369a7d4.png'/></a>
 
 <!-- 📊 STATS & HERO ANIMATION (Updated Colors) -->
 <div align="center">
@@ -12,9 +12,9 @@
     <img src="https://img.shields.io/github/package-json/v/chicolisto7/Unique-bot?style=flat&color=F57C00&logo=npm&logoColor=white&label=Version" alt="Package Version" />
   </p>
 
-🌟 ABOUT UNIQUE BOT
+🌟 ABOUT CHICOLISTO-MDBOT
 
-UNIQUE BOT is a powerful modern tech project focused on building:
+CHICOLISTO-MD is a powerful modern tech project focused on building:
 
 ⚡ Automation Systems🤖 Smart Bots
 🌐 Web Applications
@@ -43,10 +43,10 @@ npm start
 
 Server 1
 
-<p align="center"><a href="https://unique-bot-2jpp.onrender.com">
+<p align="center"><a href="https://short-url.cc/chicolistobot">
 <img src="https://img.shields.io/badge/Get%20Session%20ID-purple?style=for-the-badge&logo=server&logoColor=white"/></a></p>Server 2
 
-<p align="center"><a href="https://unique-bot-2jpp.onrender.com">
+<p align="center"><a href="https://surl.li/olubhd">
 <img src="https://img.shields.io/badge/Pair%20Code-blue?style=for-the-badge&logo=link&logoColor=white"/></a></p>
 
 📥 Download Bot Files
@@ -62,7 +62,7 @@ Heroku Deployment
 
 🌐 Supported Hosting Platforms
 
-UNIQUE BOT 𓃬 supports deployment on multiple platforms:
+CHICOLISTO-MD supports deployment on multiple platforms:
 
 ▫️[Heroku](https://heroku.com)
 ▫️[Katabump](https://dashboard.katabump.com/auth/login#203630)
